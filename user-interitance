@@ -1,0 +1,46 @@
+using System;
+
+public abstract class User
+{
+public string type;
+public string name;
+public Gender gender;
+public int age;
+public User(string type,string name,Gender gender,int age)
+{
+this.type=type;
+this.name=name;
+this.gender=gender;
+this.age=age;
+}
+public string GetUserName()
+{
+return name;
+}
+public string GetUserType()
+{
+return type;
+}
+public int GetAge()
+{
+return age;
+}
+public Gender GetGender()
+{
+return gender;
+}
+}
+public class Admin:User
+{
+public Admin(string name,Gender gender,int age):base("Admin",name,gender,age)
+{
+
+}
+}
+public class Moderator:User
+{
+public Moderator(string name,Gender gender,int age):base("Moderator",name,gender,age)
+{
+
+}
+}
