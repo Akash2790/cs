@@ -1,0 +1,53 @@
+using System;
+
+
+
+public abstract class Computer
+{
+    public string type;
+    public string model;
+    public string cpu;
+    public bool isTurnedOn=false;
+    public Computer(string type,string model,string cpu)
+    {
+        this.type=type;
+        this.model=model;
+        this.cpu=cpu;
+    }
+    public string GetComputerType()
+    {
+        return type;
+    }
+    public string GetComputerModel()
+    {
+        return model;
+    }
+    public string GetComputerCpu()
+    {
+        return cpu;
+    }
+    public bool GetComputerStatus()
+    {
+        return isTurnedOn;
+    }
+    public void SwitchComputerStatus()
+    {
+        this.isTurnedOn =!this.isTurnedOn;
+    }
+}
+public class PersonalComputer:Computer
+{
+    public PersonalComputer(string  model,string cpu):base("PersonalComputer",model,cpu)
+    {
+        this.model=model;
+        this.cpu=cpu;
+    }
+}
+public class Notebook:Computer
+{
+    public Notebook(string  model,string cpu):base("Notebook",model,cpu)
+    {
+        this.model=model;
+        this.cpu=cpu;
+    }
+}
